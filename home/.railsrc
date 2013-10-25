@@ -1,0 +1,3 @@
+# rails default stuffs when doing rails new
+--skip-test-unit
+-d postgresql

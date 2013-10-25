@@ -1,0 +1,76 @@
+"
+" increate command line form size
+"
+:hi CmdLine -append font-size:14pt
+:hi CompDesc -append font-size:14pt
+:hi CompItem -append font-size:14pt
+
+"
+" set followhints mode to 1 (Follow the selected hint on Return)
+"
+set followhints=1
+
+"set ]] pattern
+:set nextpattern="Next ›,\\bnext,^>$,^(>>|»)$,^(>|»),(>|»)$,\bmore\b"
+:set previouspattern="‹ Prev,\\bprev|previous\\b,^<$,^(<<|«)$,^(<|«),(<|«)$"
+
+"
+" make j/k scrolling more
+"
+:noremap j 5j
+:noremap k 5k
+
+"
+" map J/K tab left and right respectively
+"
+:noremap J gT
+:noremap K gt
+
+"
+" quickmarks
+"
+silent qmark f https://www.facebook.com/
+silent qmark t https://www.twitter.com/
+silent qmark g https://www.github.com/
+silent qmark G https://app.gistboxapp.com/
+silent qmark m http://gmail.com/
+silent qmark r http://reddit.com/
+silent qmark h http://forums.hardwarezone.com.sg
+silent qmark y https://www.youtube.com
+silent qmark l http://localhost:3000/
+silent qmark i http://imgur.com/
+silent qmark b https://bitbucket.org/
+silent qmark n https://intu.ntu.edu.sg/
+silent qmark d https:/drive.google.com/
+
+
+"
+" bookmarks
+"
+silent bmark http://forums.hardwarezone.com.sg/eat-drink-man-woman-16/ -title eat\ drink\ man\ woman
+silent bmark http://forums.hardwarezone.com.sg/mass-order-corner-251/ -title hwz\ mass\ order\ corner
+silent bmark http://www.google.com.sg/webmasters/ -title google\ webmasters
+silent bmark http://www.gistboxapp.com/ -title gistboxapp
+silent bmark https://ntulearn.ntu.edu.sg/ -title NTULearn
+silent bmark https://readability.com/ -title readability
+
+" disable vimperator
+silent ignorekeys add docs\\.google\\.com
+silent ignorekeys add https://duckduckgo.com/
+
+"
+" Bookmarklets
+"
+command! -nargs=0 -description="send to delicious bookmarklet" sendtodelicious open javascript:(function(e,t){var%20n=e.document;setTimeout(function(){function%20a(e){if(e.data==="destroy_bookmarklet"){var%20r=n.getElementById(t);if(r){n.body.removeChild(r);r=null}}}var%20t="DELI_bookmarklet_iframe",r=n.getElementById(t);if(r){return}var%20i="https://delicious.com/save?source=bookmarklet&",s=n.createElement("iframe");s.id=t;s.src=i+"url="+encodeURIComponent(e.location.href)+"&title="+encodeURIComponent(n.title)+"&note="+encodeURIComponent(""+(e.getSelection?e.getSelection():n.getSelection?n.getSelection():n.selection.createRange().text))+"&v=1.1";s.style.position="fixed";s.style.top="0";s.style.left="0";s.style.height="100%25";s.style.width="100%25";s.style.zIndex="16777270";s.style.border="none";s.style.visibility="hidden";s.onload=function(){this.style.visibility="visible"};n.body.appendChild(s);var%20o=e.addEventListener?"addEventListener":"attachEvent";var%20u=o=="attachEvent"?"onmessage":"message";e[o](u,a,false)},1)})(window)
+
+command! -nargs=0 -description="Read now with readability" readnow open javascript:(%0A%28function%28%29%7Bwindow.baseUrl%3D%27//www.readability.com%27%3Bwindow.readabilityToken%3D%27%27%3Bvar%20s%3Ddocument.createElement%28%27script%27%29%3Bs.setAttribute%28%27type%27%2C%27text/javascript%27%29%3Bs.setAttribute%28%27charset%27%2C%27UTF-8%27%29%3Bs.setAttribute%28%27src%27%2CbaseUrl%2B%27/bookmarklet/read.js%27%29%3Bdocument.documentElement.appendChild%28s%29%3B%7D%29%28%29)
+
+command! -nargs=0 -description="send to readability" readlater open javascript:(%0A%28function%28%29%7Bwindow.baseUrl%3D%27//www.readability.com%27%3Bwindow.readabilityToken%3D%27pgJ3gGBcMbPer699JVMK3bWF4AL5fqsKbWCL6pDX%27%3Bvar%20s%3Ddocument.createElement%28%27script%27%29%3Bs.setAttribute%28%27type%27%2C%27text/javascript%27%29%3Bs.setAttribute%28%27charset%27%2C%27UTF-8%27%29%3Bs.setAttribute%28%27src%27%2CbaseUrl%2B%27/bookmarklet/save.js%27%29%3Bdocument.documentElement.appendChild%28s%29%3B%7D%29%28%29)
+
+command! -nargs=0 -description="send to pinterest" sendtopinterest open javascript:void((function(d){var%20e=d.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','//assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);d.body.appendChild(e)})(document));
+
+command! -nargs=0 -description="PwnYouTube" downloadyoutube open javascript:(function(w,d,x){x=new(window.XMLHttpRequest||ActiveXObject)('Microsoft.XMLHTTP');x.onreadystatechange=function(){if(x.readyState==4){if(x.status==200)d.body.appendChild(d.createElement('script')).src=JSON.parse(x.responseText).query.results.url;else%20console.log('ERR',x.status,x.statusText)}};x.open('GET','//query.yahooapis.com/v1/public/yql?q='+encodeURIComponent('select%20*%20from%20json%20where%20url="http://noflr.deturl.com/l.asp"')+'&format=json');x.send()})(window,document);
+
+command! -nargs=0 -description="search NTU resources" searchnturesources open javascript:void(location.href=%22http://ezlibproxy1.ntu.edu.sg/login?url=%22+location.href)
+
+command! -nargs=0 -description="zoom text only" zoomtextonly emenu View.Zoom.Zoom Text Only
