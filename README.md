@@ -2,14 +2,6 @@
 
 Firstly, make sure you've installed [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh#via-curl).
 
-Secondy, make sure you install [homesick](https://github.com/technicalpickles/homesick)
-
-### setup dotfiles!
-
-```
-homesick clone steve0hh/dotfiles
-homesick symlink dotfiles
-```
 
 
 
@@ -41,3 +33,11 @@ Then launch vim and run `:PluginInstall`
 
 Make sure you've installed [Homebrew](http://brew.sh/#install).
 
+Install [RCM](https://github.com/thoughtbot/rcm)
+
+### setup dotfiles!
+```
+git clone https://github.com/steve0hh/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+rcup -d home
+```

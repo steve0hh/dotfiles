@@ -1,4 +1,4 @@
-source ~/.homesick/repos/dotfiles/bundles.vim
+source ~/.dotfiles/bundles.vim
 
 " Gui stuffs
 set t_Co=256                                              " set terminal to use 256 colors

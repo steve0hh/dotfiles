@@ -1,8 +1,6 @@
 alias tlog='tail -f log/development.log'
 alias zshconfig='nvim ~/.zshrc'
 alias gitconfig='nvim ~/.gitconfig'
-alias edot='homesick open dotfiles'
-alias cddot='homesick cd dotfiles'
 alias nm='nvim .'
 alias chrome='open -a Google\ Chrome --args --disable-web-security'
 alias firefox='open -a Firefox'
