@@ -7,7 +7,6 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " General enhancements
-Plug 'tpope/vim-sensible'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
