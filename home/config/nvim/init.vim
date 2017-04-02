@@ -149,9 +149,8 @@ inoremap <silent><expr> <Tab>
       \ deoplete#mappings#manual_complete()
 
 
-
 """""""""""""""""""""""""
-" Arduino mappings settings
+" use homebrew python
 """""""""""""""""""""""""
-nnoremap <leader>ac = :!/Applications/Arduino.app/Contents/MacOS/Arduino --verify %<cr>
-nnoremap <leader>ad = :!/Applications/Arduino.app/Contents/MacOS/Arduino --upload %<cr>
+let g:python_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'

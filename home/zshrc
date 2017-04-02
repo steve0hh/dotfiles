@@ -78,3 +78,7 @@ echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}${ZSH_THEME_GIT_PROMPT_CLEAN
 
 export NVM_DIR="/Users/Steve/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export PATH="$HOME/anaconda3/bin:$PATH"
+
+
