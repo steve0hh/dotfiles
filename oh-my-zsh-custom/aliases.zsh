@@ -16,7 +16,7 @@ alias startmongo='mongod --config /usr/local/etc/mongod.conf'
 alias update-phoenix='mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez'
 
 # phoenix alias
-alias mpr="mix phoenix.routes"
-alias mps="mix phoenix.server"
+alias mpr="mix phx.routes"
+alias mps="mix phx.server"
 alias mem="mix ecto.migrate"
 alias iexm="iex -S mix"

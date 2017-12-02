@@ -34,7 +34,6 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets' | Plug 'steve0hh/vim-react-es6-snippets'
 
 " Vanity plugins
-Plug 'jfchevrette/dracula-theme', {'rtp': 'vim/'}
 Plug 'tomasr/molokai'
 Plug 'bling/vim-airline'
 
@@ -50,12 +49,6 @@ Plug 'tpope/vim-bundler'
 " Javascript enhancements
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-
-" Less enhancement
-Plug 'groenewege/vim-less', {'for': 'less'}
-
-" SLIM enchancements
-Plug 'slim-template/vim-slim', { 'for': 'slim' }
 
 " Markdown enhancements
 Plug 'tpope/vim-markdown', {'for': ['md', 'markdown']}

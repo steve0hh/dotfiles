@@ -37,7 +37,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew gem rbenv rails bundler git zeus tmuxinator mix)
+plugins=(brew gem rbenv bundler git mix)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -79,6 +79,5 @@ echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}${ZSH_THEME_GIT_PROMPT_CLEAN
 export NVM_DIR="/Users/Steve/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export PATH="$HOME/anaconda3/bin:$PATH"
-
-
+# enable iex shell version history
+export ERL_AFLAGS="-kernel shell_history enabled"

@@ -72,7 +72,7 @@ endif
 " ignore files in ctrl-p
 :let g:ctrlp_custom_ignore = {
       \ 'file': '\.exe$\|\.class$\|\.dat$',
-      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\'
+      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|_build$\'
       \ }
 let g:ctrlp_show_hidden = 1
 
