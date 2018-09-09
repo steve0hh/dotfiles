@@ -77,23 +77,6 @@ endif
 let g:ctrlp_show_hidden = 1
 
 """""""""""""""""""""""""
-" syntastic settings
-"""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:airline#extensions#syntastic#enabled = 1
-
-" disable syntastic rspec wanring
-let g:syntastic_ruby_mri_quiet_messages = { 'regex': 'reference to past scope' }
-noremap <leader>st = :SyntasticToggleMode<cr>
-
-"""""""""""""""""""""""""
 " UltiSnipts settings
 """""""""""""""""""""""""
 " Trigger configuration

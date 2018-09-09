@@ -16,7 +16,7 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'tpope/vim-dispatch'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim'
 
