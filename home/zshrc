@@ -37,7 +37,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew gem rbenv bundler git mix tmuxinator)
+plugins=(brew gem bundler git mix)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -51,21 +51,6 @@ export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 # Ensure user-installed binaries take precedence
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-
-# rbenv configs
-eval "$(rbenv init -)"
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# Docker settings
-# export DOCKER_HOST=tcp://192.168.59.103:2376
-# export DOCKER_CERT_PATH=/Users/stevetan/.boot2docker/certs/boot2docker-vm
-# export DOCKER_TLS_VERIFY=1
-
-# zeus temporary workaround for broken carriage return
-# https://github.com/burke/zeus/issues/137
-z() { zeus $*; stty sane }
 
 # tmux configurations
 export DISABLE_AUTO_TITLE=true
@@ -81,3 +66,7 @@ export NVM_DIR="/Users/Steve/.nvm"
 
 # enable iex shell version history
 export ERL_AFLAGS="-kernel shell_history enabled"
+
+# Python configurations
+export PATH="/home/steve/.local/bin:$PATH"
+export PATH="/home/steve/anaconda3/bin:$PATH"

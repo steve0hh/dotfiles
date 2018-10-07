@@ -136,4 +136,7 @@ inoremap <silent><expr> <Tab>
 " use homebrew python
 """""""""""""""""""""""""
 let g:python_host_prog = '/usr/local/bin/python2'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/home/steve/anaconda3/bin/python'
+
+
+hi MatchParen cterm=none ctermbg=darkgreen ctermfg=lightgreen
