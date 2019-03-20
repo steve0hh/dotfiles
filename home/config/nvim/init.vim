@@ -28,9 +28,6 @@ let mapleader = ' '                                        " map leader to space
 nnoremap <leader>b = :ctrlpbuffer<cr>
 nnoremap <leader>q = :exit<cr>
 nnoremap <leader>w = :write<cr>
-nnoremap <leader>rev = :Eview<space>
-nnoremap <leader>rec = :Econtroller<space>
-nnoremap <leader>rem = :Emodel<space>
 nnoremap <leader>gs = :Gstatus<cr>
 nnoremap <leader>gd = :Gdiff<cr>
 nnoremap <leader>ev = :vsplit $MYVIMRC<cr>
@@ -47,7 +44,6 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " netrw settings
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-
 
 """""""""""""""""""""""""
 " Running tests settings and mappings
@@ -71,8 +67,8 @@ endif
 """""""""""""""""""""""""
 " ignore files in ctrl-p
 :let g:ctrlp_custom_ignore = {
-      \ 'file': '\.exe$\|\.class$\|\.dat$',
-      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|_build$\'
+      \ 'file': '\.exe$\|\.class$\|\.dat$|\.pyc$',
+      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|_build$\|env$'
       \ }
 let g:ctrlp_show_hidden = 1
 
@@ -84,24 +80,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-
-
-"""""""""""""""""""""""""
-" Strip trailing whitespace
-"""""""""""""""""""""""""
-" Strip trailing whitespace
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 """""""""""""""""""""""""
 " React settings
@@ -133,10 +111,25 @@ inoremap <silent><expr> <Tab>
 
 
 """""""""""""""""""""""""
-" use homebrew python
+" python configurations
 """""""""""""""""""""""""
 let g:python_host_prog = '/usr/local/bin/python2'
-let g:python3_host_prog = '/home/steve/anaconda3/bin/python'
+let g:python3_host_prog = '/home/'.$USER.'/anaconda3/envs/editor/bin/python3'
 
 
 hi MatchParen cterm=none ctermbg=darkgreen ctermfg=lightgreen
+
+
+"""""""""""""""""""""""""
+" ALE configurations
+"""""""""""""""""""""""""
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'python': ['black'],
+\}
+
+let g:ale_fix_on_save = 1
+nmap <silent> <leader>aj :ALENext<CR>
+nmap <silent> <leader>ak :ALEPrevious<CR>
+
+let $PATH = '/home/'.$USER.'/anaconda3/envs/editor/bin:'.$PATH
