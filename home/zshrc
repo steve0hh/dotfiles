@@ -61,12 +61,17 @@ ref=$(git symbolic-ref HEAD 2> /dev/null) || return
 echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}${ZSH_THEME_GIT_PROMPT_CLEAN}${ZSH_THEME_GIT_PROMPT_SUFFIX}"
 }
 
-
 # Python configurations
-export PATH="/home/zeyi/anaconda3/bin:$PATH"
-export PATH="/home/zeyi/.local/bin:$PATH"
+export PATH=~/anaconda3/bin:$PATH
+
+# Add snap binaries to path
+export PATH="$PATH:/snap/bin"
+
+# golang stuffs
 export PATH="$PATH:$(go env GOPATH)/bin"
-export REQUESTS_CA_BUNDLE="/etc/ssl/certs/ca-certificates.crt"
+
+# flutter
+export PATH=$PATH:~/flutter/flutter/bin
 
 export LESS_TERMCAP_mb=$'\E[1;31m'     # begin bold
 export LESS_TERMCAP_md=$'\E[1;36m'     # begin blink
@@ -76,3 +81,9 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 export GROFF_NO_SGR=1                  # for konsole and gnome-terminal
+
+
+# NVM stuffs
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

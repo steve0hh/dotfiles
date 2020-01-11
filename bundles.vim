@@ -57,6 +57,12 @@ Plug 'tpope/vim-markdown', {'for': ['md', 'markdown']}
 Plug 'elixir-lang/vim-elixir'
 Plug 'janko-m/vim-test'
 
+" Golang enhancements
+Plug 'fatih/vim-go'
+
+" Dart and flutter enhancements
+Plug 'dart-lang/dart-vim-plugin'
+
 " Tmux stuffs
 Plug 'christoomey/vim-tmux-navigator'
 

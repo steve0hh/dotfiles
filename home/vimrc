@@ -70,6 +70,10 @@ endif
       \ 'file': '\.exe$\|\.class$\|\.dat$|\.pyc$',
       \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|_build$\|env$'
       \ }
+
+" ignore files listed in .gitignore: https://github.com/kien/ctrlp.vim/issues/174#issuecomment-49747252
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
 let g:ctrlp_show_hidden = 1
 
 """""""""""""""""""""""""
@@ -133,3 +137,8 @@ nmap <silent> <leader>aj :ALENext<CR>
 nmap <silent> <leader>ak :ALEPrevious<CR>
 
 let $PATH = '/home/'.$USER.'/anaconda3/envs/editor/bin:'.$PATH
+
+"""""""""""""""""""""""""
+" golang configurations
+"""""""""""""""""""""""""
+let g:go_fmt_command = "goimports"
